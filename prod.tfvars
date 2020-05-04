@@ -1,3 +1,10 @@
+//Bucket where I save Backend (Terraform State)
+bucket_name_code = "tf-lab-juansinwifiapp-20-backend"
+bucket_acl_code = "private"
+tags_code = {
+    Name = "BackendBucket"
+    Environment = "Prod"
+}
 //Bucket where I save my code
 bucket_name_code = "tf-lab-juansinwifiapp-20-code"
 bucket_acl_code = "private"
