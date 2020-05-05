@@ -29,3 +29,7 @@ module "s3_bucket_media" {
   tags          = var.tags_media
 }
 
+module "cloudfront_distribution" {
+  source        = "./modules/cloudfront"
+  bucket_name   = module.s3_bucket_media.bucket_name
+}
