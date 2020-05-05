@@ -1,7 +1,9 @@
+region = "us-east-1"
+
 //Bucket where I save Backend (Terraform State)
-bucket_name_code = "tf-lab-juansinwifiapp-20-backend"
-bucket_acl_code = "private"
-tags_code = {
+bucket_name_backend = "tf-lab-juansinwifiapp-20-backend"
+bucket_acl_backend = "private"
+tags_backend = {
     Name = "BackendBucket"
     Environment = "Prod"
 }

@@ -1,3 +1,8 @@
+variable "region" {
+  
+}
+
+
 //Backend Bucket
 variable "bucket_name_backend" {}
 variable "bucket_acl_backend" {}
