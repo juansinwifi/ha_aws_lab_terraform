@@ -18,3 +18,19 @@ variable "bucket_name_media" {}
 variable "bucket_acl_media" {}
 variable "tags_media" {}
 
+//vpc
+variable "tags_vpc"{}
+
+//public Subnet  
+variable "cidr_block_public" {}
+variable "availability_zone_public" {}
+variable "tags_subnet_public" {}
+variable "ip_on_launch"{}
+
+//public Subnet  
+variable "cidr_block_private" {}
+variable "availability_zone_private" {}
+variable "tags_subnet_private" {}
+
+//Internet Gateway
+variable "tags_ig"{}

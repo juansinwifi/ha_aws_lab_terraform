@@ -33,3 +33,32 @@ module "cloudfront_distribution" {
   source        = "./modules/cloudfront"
   bucket_name   = module.s3_bucket_media.bucket_name
 }
+
+module "vpc" {
+  source  = "./modules/vpc"
+  tags    = var.tags_vpc
+}
+
+module "public_vpc" {
+  source  = "./modules/subnet"
+  vpc_id     = module.vpc.vpc_id
+  cidr_block = var.cidr_block_public
+  availability_zone = var.availability_zone_public
+  ip_on_launch = var.ip_on_launch
+  tags = var.tags_subnet_public
+}
+
+module "private_vpc" {
+  source  = "./modules/subnet"
+  vpc_id     = module.vpc.vpc_id
+  cidr_block = var.cidr_block_private
+  availability_zone = var.availability_zone_private
+  tags = var.tags_subnet_private
+}
+
+module "internet_gateway"{
+  source  = "./modules/internet_gateway"
+  vpc_id  = module.vpc.vpc_id
+  tags    = var.tags_ig
+}
+
